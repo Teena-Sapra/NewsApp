@@ -3,6 +3,7 @@ package com.tsapra.newsapp.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.tsapra.newsapp.data.entities.Article
 import com.tsapra.newsapp.data.entities.NewsResponse
 import com.tsapra.newsapp.repository.NewsRepository
 import com.tsapra.newsapp.utils.Resource
@@ -30,6 +31,15 @@ class NewsViewModel(val newsRepository: NewsRepository): ViewModel(){
         }
         return Resource.Error(response.message())
 
+    }
+    fun saveArticle(article: Article) = viewModelScope.launch {
+        newsRepository.upsert(article)
+    }
+
+    fun getSavedNews() = newsRepository.getSavedNews()
+
+    fun deleteArticle(article: Article) = viewModelScope.launch {
+        newsRepository.deleteArticle(article)
     }
 }
 

@@ -18,6 +18,7 @@ import com.tsapra.newsapp.ui.theme.NewsAppTheme
 import com.tsapra.newsapp.viewModel.NewsViewModel
 import com.tsapra.newsapp.viewModel.NewsViewModelProvider
 import androidx.lifecycle.ViewModelProvider
+import com.tsapra.newsapp.database.ArticleDatabase
 import com.tsapra.newsapp.ui2.BreakingNewsFragment
 
 class MainActivity : AppCompatActivity() {
@@ -29,10 +30,9 @@ class MainActivity : AppCompatActivity() {
             setReorderingAllowed(true)
             add<BreakingNewsFragment>(R.id.fragmentContainerView)
         }
-        val newsrepository = NewsRepository()
+        val newsrepository = NewsRepository(ArticleDatabase(this))
         val viewModelProviderFactory = NewsViewModelProvider(newsrepository)
         viewModel= ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
-
 
     }
 
