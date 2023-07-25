@@ -3,17 +3,19 @@ package com.tsapra.newsapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.tsapra.newsapp.R
+import com.tsapra.newsapp.data.entities.Article
 import kotlinx.android.synthetic.main.single_item.view.DescEdit
 import kotlinx.android.synthetic.main.single_item.view.imageView
 import kotlinx.android.synthetic.main.single_item.view.publishDateEdit
 import kotlinx.android.synthetic.main.single_item.view.titleEdit
 
-class NewsAdapter:RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
+class NewsAdapter(var require:FragmentActivity, var check:String):RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
 
     inner class ArticleViewHolder(itemView:View ):RecyclerView.ViewHolder(itemView){

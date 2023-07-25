@@ -29,14 +29,12 @@ class MainActivity : AppCompatActivity() {
             setReorderingAllowed(true)
             add<BreakingNewsFragment>(R.id.fragmentContainerView)
         }
+        val newsrepository = NewsRepository()
+        val viewModelProviderFactory = NewsViewModelProvider(newsrepository)
         viewModel= ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
 
 
     }
-        val newsrepository = NewsRepository()
-        val viewModelProviderFactory = NewsViewModelProvider(newsrepository)
-
-
 
 
 }

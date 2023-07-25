@@ -44,7 +44,7 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
     }
 
     private fun setupRV() {
-        newsadapter= NewsAdapter()
+        newsadapter= NewsAdapter(requireActivity(), "FALSE")
         rv.apply{
             adapter=newsadapter
             layoutManager=LinearLayoutManager(activity)
