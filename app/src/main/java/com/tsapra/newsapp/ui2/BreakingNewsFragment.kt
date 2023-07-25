@@ -18,6 +18,7 @@ import com.tsapra.newsapp.viewModel.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_breaking_news.rv2
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 
@@ -37,7 +38,7 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
             val fragmentManager = parentFragmentManager
             val bundle= bundleOf("url" to it.url)
             fragmentManager.commit{
-                replace<ArticleFragment>(R.id.fragmentContainerView, args=bundle)
+                add<ArticleFragment>(R.id.fragmentContainerView, args=bundle)
                 setReorderingAllowed(true)
                 addToBackStack("name")
             }
