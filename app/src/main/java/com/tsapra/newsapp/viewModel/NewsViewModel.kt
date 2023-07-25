@@ -3,10 +3,8 @@ package com.tsapra.newsapp.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tsapra.newsapp.data.entities.NewsResponse
 import com.tsapra.newsapp.repository.NewsRepository
 import com.tsapra.newsapp.utils.Resource
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

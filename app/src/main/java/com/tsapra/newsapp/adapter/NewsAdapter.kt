@@ -7,9 +7,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.util.Util
 import com.tsapra.newsapp.R
-import com.tsapra.newsapp.data.entities.Article
 import kotlinx.android.synthetic.main.single_item.view.DescEdit
 import kotlinx.android.synthetic.main.single_item.view.imageView
 import kotlinx.android.synthetic.main.single_item.view.publishDateEdit
