@@ -1,5 +1,8 @@
 package com.tsapra.newsapp.ui2
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tsapra.newsapp.MainActivity
 import com.tsapra.newsapp.R
+import com.tsapra.newsapp.ReadActivity
 import com.tsapra.newsapp.adapter.NewsAdapter
 import com.tsapra.newsapp.utils.Resource
 import com.tsapra.newsapp.viewModel.NewsViewModel
@@ -25,11 +29,11 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
         viewModel=(activity as MainActivity).viewModel
         setupRV()
 
-        /*newsadapter.setOnItemClickListener {
-            val bundle = Bundle().apply{
-                putSerializable("article",it)
-            }
-        }*/
+        newsadapter.setOnItemClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(it.url)
+            startActivity(intent)
+        }
 
         viewModel.breakingNews.observe(viewLifecycleOwner, Observer{
             when(it){

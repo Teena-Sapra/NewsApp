@@ -1,5 +1,6 @@
 package com.tsapra.newsapp.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.tsapra.newsapp.R
+import com.tsapra.newsapp.ReadActivity
 import com.tsapra.newsapp.data.entities.Article
 import kotlinx.android.synthetic.main.single_item.view.DescEdit
 import kotlinx.android.synthetic.main.single_item.view.imageView
 import kotlinx.android.synthetic.main.single_item.view.publishDateEdit
+import kotlinx.android.synthetic.main.single_item.view.readBtn
 import kotlinx.android.synthetic.main.single_item.view.titleEdit
 
 class NewsAdapter(var require:FragmentActivity, var check:String):RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
@@ -56,11 +59,11 @@ class NewsAdapter(var require:FragmentActivity, var check:String):RecyclerView.A
                     it(article)
                 }
             }
-            /*readButton.setOnClickListener{
+            readBtn.setOnClickListener{
                 onItemClickListener?.let{
                     it(article)
                 }
-            }*/
+            }
         }
     }
     private var onItemClickListener:((Article)-> Unit)?=null
