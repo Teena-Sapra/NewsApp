@@ -56,10 +56,15 @@ class NewsAdapter(var require:FragmentActivity, var check:String):RecyclerView.A
                     it(article)
                 }
             }
+            /*readButton.setOnClickListener{
+                onItemClickListener?.let{
+                    it(article)
+                }
+            }*/
         }
     }
     private var onItemClickListener:((Article)-> Unit)?=null
-    fun setOnClickListener(listener:(Article)->Unit){
+    fun setOnItemClickListener(listener:(Article)->Unit){
         onItemClickListener=listener
     }
 }

@@ -24,6 +24,13 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
         super.onViewCreated(view, savedInstanceState)
         viewModel=(activity as MainActivity).viewModel
         setupRV()
+
+        /*newsadapter.setOnItemClickListener {
+            val bundle = Bundle().apply{
+                putSerializable("article",it)
+            }
+        }*/
+
         viewModel.breakingNews.observe(viewLifecycleOwner, Observer{
             when(it){
                 is Resource.Success ->{
